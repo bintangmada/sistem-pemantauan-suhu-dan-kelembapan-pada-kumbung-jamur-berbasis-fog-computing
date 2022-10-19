@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>Suhu Kelembaban Kumbung Jamur</title>
+      <link rel="stylesheet" href='../static/style.css'/>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+      <meta http-equiv="refresh" content="2"/>
+      <style>
+	      body {
+		      text-align: center;
+	      }
+	      #suhu1,
+	      #kelembaban1,
+	      #suhu2,
+	      #kelembaban2 {
+		      width:430px;
+		      height:330px;
+		      display: inline-block;
+		      margin: 1em;
+	      }
+      </style>
+   </head>
+
+   <body>		
+		<h1>Node 1</h1>
+		<div id="suhu1"></div>
+		<div id="kelembaban1"></div>
+		<h2> Sprayer : {{ notif1 }}</h2>
+		<!--<h3>Update Node1 : {{time1}} ==> <a href="/"class="button">REFRESH</a></h3>-->
+		<hr>
+		
+		<h1>Node 2</h1>
+		<div id="suhu2"></div>
+		<div id="kelembaban2"></div>
+		<h2> Sprayer : {{ notif2 }}</h2>
+		<!--<h3>Update Node2 : {{time2}} ==> <a href="/"class="button">REFRESH</a></h3>-->
+				
+		<script src="../static/raphael-2.1.4.min.js"></script>
+		<script src="../static/justgage.js"></script>
+		
+		
+		
+		
+		<script>
+			var suhu1, kelembaban1, suhu2, kelembaban2;
+			document.addEventListener("DOMContentLoaded", function(event){
+				suhu1 = new JustGage({
+					id:"suhu1",
+					value:{{suhu1}},
+					valueFontColor:"yellow",
+					min:0,
+					max:100,
+					title: "Suhu",
+					label:"Celsius"
+				});
+				kelembaban1 = new JustGage({
+					id:"kelembaban1",
+					value:{{kelembaban1}},
+					valueFontColor:"yellow",
+					min:0,
+					max:100,
+					title:"Kelembaban",
+					label:"%"
+				});
+				suhu2 = new JustGage({
+					id:"suhu2",
+					value:{{suhu2}},
+					valueFontColor:"yellow",
+					min:0,
+					max:100,
+					title: "Suhu",
+					label:"Celsius"
+				});
+				kelembaban2 = new JustGage({
+					id:"kelembaban2",
+					value:{{kelembaban2}},
+					valueFontColor:"yellow",
+					min:0,
+					max:100,
+					title:"Kelembaban",
+					label:"%"
+				});
+			})
+		</script>
+   </body>
+</html>
