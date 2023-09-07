@@ -1,3 +1,4 @@
+#edited ke 2
 #library yang dibutuhkan
 import serial
 import sqlite3
